@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html ⚡ lang="en">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ansh Tiwatne</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="canonical" href="https://anshtiwatne.github.io/" />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<!-- Font (weight normal and bold) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&subset=latin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" />
-    <!-- Meta Tags -->
-    <meta name="amp-script-src" content="sha384-XbHGb-05OoptdriOYsMG3fhMp8zppRhjA4Os5yggLQqxTjJLQ_x45M7yBfZByf_Y">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&subset=latin&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/9401ee056a.js" crossorigin="anonymous" async></script>
+	<!-- Primary Meta Tags -->
+	<title>Ansh Tiwatne</title>
+	<link rel="canonical" href="https://anshtiwatne.github.io/" />
 	<meta name="title" content="Ansh Tiwatne">
-	<meta name="description" content="Ansh's portfolio website">
+	<meta name="description" content="My portfolio website">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://anshtiwatne.github.io/avatar.webp">
 	<meta name="darkreader-lock">
@@ -49,154 +48,153 @@
 			}
 		}		
 	</script>
-    <style amp-custom>
-        /* Theme variables */
-        :root {
-            color-scheme: light;
-            --bg-color: #FFFFFF;
-            --text-color: #24292F;
-            --link-color: #0969DA;
-            --muted-text-color: #57606A;
-            --quote-color: #3182CE;
-            --quote-bg: #F3F3F3;
-            --icon-hover: #171515;
-        }
-    
-        @media (prefers-color-scheme: dark) {
-            :root {
-                color-scheme: dark;
-                --bg-color: #1A1B1E;
-                --text-color: #F5F5F5;
-                --link-color: #58A6FF;
-                --muted-text-color: #D3D3D3;
-                --quote-color: #C2CBD4;
-                --quote-bg: #262729;
-                --icon-hover: #FFFFFF;
-            }
-        }
-    
-        /* Elements */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: "JetBrains Mono", monospace;
-            line-height: 2rem;
-            padding: 0 1.5rem;
-        }
-
-        .container {
-            margin: 0 auto;
-            max-width: 45rem;
-        }
-    
-        header,
-        footer {
-            color: var(--muted-text-color);
-            display: flex;
-            text-align: center;
-            justify-content: space-between;
-            letter-spacing: 1px;
-            padding: 3rem 0;
-            margin: 0 auto;
-        }
-    
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-    
-        a:hover {
-            text-decoration: underline;
-        }
-    
-        header a,
-        footer a {
-            color: var(--muted-text-color);
-        }
-    
-        header a:hover,
-        footer a:hover {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-    
-        sup {
-            vertical-align: top;
-            position: relative;
-            top: -0.45em;
-        }
-    
-        blockquote {
-            border-left: 0.3ch solid var(--quote-color);
-            background: var(--quote-bg);
-            margin: 0;
-            padding: 0.1rem 0.5rem 0.1rem 1rem;
-            border-radius: 0.15rem;
-        }
-    
-        .about-subheader {
-            font-size: medium;
-            font-weight: bold;
-            letter-spacing: 1px;
-            padding-top: 1rem;
-        }
-    
-        .ascii-art {
-            line-height: normal;
-            text-align: right;
-            font-family: "JetBrains Mono", monospace;
-            font-size: small;
-        }
-    
-        .ascii-art a {
-            text-decoration: none;
-        }
-    
-        .ascii-art a:hover {
-            display: inline-block;
-            transform: scale(1.1);
-        }
-    
-        .social-icons {
-            font-size: 1.25rem;
-            letter-spacing: 0.2rem;
-            cursor: default;
-        }
-    
-        .fa-linkedin:hover {
-            color: #007BB6;
-        }
-    
-        .fa-instagram:hover {
-            background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    
-        .fa-github:hover,
-        .fa-x-twitter:hover {
-            color: var(--icon-hover);
-        }
-    
-        .fa-envelope:hover {
-            color: #00A7EE;
-        }
-    
-        @media print {
-            header {
-                padding-top: 1rem;
-            }
-    
-            footer {
-                padding-bottom: 1rem;
-            }
-        }
-    </style>
 </head>
 
-<body>
-    <div class="container">
+<style>
+	/* Theme variables */
+	:root {
+		color-scheme: light;
+		--bg-color: #FFFFFF;
+		--text-color: #24292F;
+		--link-color: #0969DA;
+		--muted-text-color: #57606A;
+		--quote-color: #3182CE;
+		--quote-bg: #F3F3F3;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			color-scheme: dark;
+			--bg-color: #1A1B1E;
+			--text-color: #F5F5F5;
+			--link-color: #58A6FF;
+			--muted-text-color: #D3D3D3;
+			--quote-color: #C2CBD4;
+			--quote-bg: #262729;
+		}
+	}
+
+	/* Elements */
+	body {
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		font-family: "JetBrains Mono", monospace;
+		line-height: 2rem;
+		padding: 0 1.5rem;
+		margin: 0 auto;
+		max-width: 45rem;
+	}
+
+	header,
+	footer {
+		color: var(--muted-text-color);
+		display: flex;
+		text-align: center;
+		justify-content: space-between;
+		letter-spacing: 1px;
+		padding: 3rem 0;
+		margin: 0 auto;
+	}
+
+	a {
+		color: var(--link-color);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	header a,
+	footer a {
+		color: var(--muted-text-color);
+	}
+
+	header a:hover,
+	footer a:hover {
+		color: var(--link-color);
+		text-decoration: none;
+	}
+
+	sup {
+		vertical-align: top;
+		position: relative;
+		top: -0.45em;
+	}
+
+	blockquote {
+		border-left: 0.3ch solid var(--quote-color);
+		background: var(--quote-bg);
+		margin: 0;
+		padding: 0.1rem 0.5rem 0.1rem 1rem;
+		border-radius: 0.15rem;
+	}
+
+	.about-subheader {
+		font-size: medium;
+		font-weight: bold;
+		letter-spacing: 1px;
+		padding-top: 1rem;
+	}
+
+	.ascii-art {
+		line-height: normal;
+		text-align: right;
+		font-family: "JetBrains Mono", monospace;
+		font-size: small;
+	}
+
+	.ascii-art a {
+		text-decoration: none;
+	}
+
+	.ascii-art a:hover {
+		display: inline-block;
+		transform: scale(1.1);
+	}
+
+	.social-icons {
+		font-size: 1.25rem;
+		letter-spacing: 0.2rem;
+		cursor: default;
+	}
+
+	.fa-linkedin:hover {
+		color: #007BB6;
+	}
+
+	.fa-instagram:hover {
+		background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.fa-github:hover,
+	.fa-x-twitter:hover {
+		color: #171515;
+
+		@media (prefers-color-scheme: dark) {
+			color: #FFFFFF;
+		}
+	}
+
+	.fa-envelope:hover {
+		color: #00A7EE;
+	}
+
+	@media print {
+		header {
+			padding-top: 1rem;
+		}
+
+		footer {
+			padding-bottom: 1rem;
+		}
+	}
+</style>
+
+<body onload="typeWriter()">
 
 	<header>
 		<a href="/"><b>ANSH TIWATNE</b></a>
@@ -207,10 +205,7 @@
 		<!-- <nav><a href="https://github.com/anshtiwatne">Github</a> | Resume</a></nav> -->
 	</header>
 
-    <amp-script width="100vw" height="5rem" script="typewriter">
 	<h1 id="greeting-placeholder" style="padding: 1rem 0;">👋 </h1>
-    </amp-script>
-
 	<p class="about">
 		I'm a G11 student at <a href="https://dlrc.in">DLRC</a>, I obsessively write code. My other passions include
 		Physics, Math and Computer Science.
@@ -416,24 +411,20 @@
 		</nav>
 	</footer>
 
-    </div> 
 </body>
 
-<script id="typewriter" type="text/plain" target="amp-script">
+<script async>
 	let i = 0
 	const duration = 75
 	const txt = " Hi, I'm Ansh"
-	const element = document.getElementById("greeting-placeholder")
 
-    // element.onload(typeWriter)
 	function typeWriter() {
+		const element = document.getElementById("greeting-placeholder")
 		if (i < txt.length) {
 			element.innerHTML += txt.charAt(i)
 			i++; setTimeout(typeWriter, duration)
 		}
 	}
-
-    typeWriter()
 </script>
 
 </html>
