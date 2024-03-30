@@ -9,7 +9,7 @@
 	<title>Ansh Tiwatne | About</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="canonical" href="https://anshtiwatne.github.io/" />
-	<meta name="amp-script-src" content="sha384-zGsvdIRGatH3NuuafzUCqsvSqr5oR5PPzhqiteCrURFyx-KY7duKvUGkDIq1-kS7">
+	<meta name="amp-script-src" content="sha384-PMXjip7XuWlvUiQlQs3ihUJjVAGjr_2o7buDv7atuGp1-SVqFjM3QNDNqH4VHRnA">
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,6 +199,20 @@
 		.fa-envelope:hover + .fa-envelope-open {
 			display: inline;
 		}
+
+		.falling-emoji {
+			font-size: 2rem;
+			position: fixed;
+			animation-name: fall;
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes fall {
+			0% { top: -5%; }
+			100% { top: 100%; }
+		}
 	
 		@media print {
 			html, body {
@@ -233,8 +247,8 @@
 		<!-- <nav><a href="https://github.com/anshtiwatne">Github</a> | Resume</a></nav> -->
 	</header>
 
-	<amp-script width="100vw" height="5rem" script="typewriter">
-	<h1 data-nosnippet id="greeting-placeholder" style="padding: 1rem 0;">👋 </h1>
+	<amp-script style="display: flex;" height="5rem" script="greet">
+		<h1 data-nosnippet id="greeting-placeholder" style="padding: 1rem 0; cursor: pointer;">👋 </h1>
 	</amp-script>
 
 	<p class="about">
@@ -455,19 +469,44 @@ _____________
 	</div> 
 </body>
 
-<script id="typewriter" type="text/plain" target="amp-script">
+<script id="greet" type="text/plain" target="amp-script">
 	let i = 0
-	const duration = 75
+	const typeDuration = 75
 	const txt = " Hi, I'm Ansh"
 	const element = document.getElementById("greeting-placeholder")
 
 	function typeWriter() {
 		if (i < txt.length) {
 			element.innerHTML += txt.charAt(i)
-			i++; setTimeout(typeWriter, duration)
+			i++; setTimeout(typeWriter, typeDuration)
 		}
 	}
 
 	typeWriter()
+	let isFalling = false
+
+	element.addEventListener('click', () => {
+		if (isFalling) return
+		isFalling = true
+		let longestDuration = 0
+
+		for (let i = 0; i < 10; i++) {
+			const emoji = document.createElement('div')
+			const fallDuration = Math.random() * 2 + 1
+			emoji.textContent = '👋'
+			emoji.className = 'falling-emoji'
+			emoji.style.left = (Math.random() * (window.innerWidth * 0.8)) + (window.innerWidth * 0.1) + 'px'
+			emoji.style.top = Math.round(Math.random() * window.innerHeight + 'px')
+			emoji.style.animationDuration = fallDuration + 's'
+			emoji.addEventListener('click', (e) => e.stopPropagation()) // Stop propagation of click event
+			document.body.appendChild(emoji)
+			longestDuration = Math.max(longestDuration, fallDuration)
+		}
+
+		setTimeout(function() {
+			document.querySelectorAll('.falling-emoji').forEach(e => e.remove())
+			isFalling = false
+		}, longestDuration * 1000)
+	})
 </script>
 </html>
