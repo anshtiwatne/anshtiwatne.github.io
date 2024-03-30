@@ -120,6 +120,10 @@
 			color: var(--link-color);
 			text-decoration: none;
 		}
+
+		a[title="Email"]:hover {
+			color: var(--icon-hover);
+		}
 	
 		sup {
 			vertical-align: top;
@@ -187,18 +191,13 @@
 			color: var(--icon-hover);
 		}
 	
-		.fa-envelope:hover {
-    		display: none;
-			color: var(--icon-hover);
-		}
-
+		.fa-envelope:hover,
 		.fa-envelope + .fa-envelope-open {
 			display: none;
 		}
 
 		.fa-envelope:hover + .fa-envelope-open {
 			display: inline;
-			color: var(--icon-hover);
 		}
 	
 		@media print {
