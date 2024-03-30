@@ -9,7 +9,7 @@
 	<title>Ansh Tiwatne | About</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="canonical" href="https://anshtiwatne.github.io/" />
-	<meta name="amp-script-src" content="sha384-tHyGjfvxY9DfqQhyKyDMAjz3afmd_j3EmwaOXl5BvOQZczzWm3FvVEatrNRGdMSI">
+	<meta name="amp-script-src" content="sha384-YJn_o8zC79gsnTkBScY6jw0UtCGTALhyLHLsFX9HjDGAhSsqsvZu73AKiSueHs4s">
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,6 +219,26 @@
 			0% { top: -5%; }
 			100% { top: 100%; }
 		}
+
+		.wave {
+			display: inline-block;
+			transform-origin: 70% 70%;
+			animation-name: wave-animation;
+			animation-duration: 2.5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		@keyframes wave-animation {
+			0% { transform: rotate( 0.0deg); }
+			10% { transform: rotate(14.0deg); }  
+			20% { transform: rotate(-8.0deg); }
+			30% { transform: rotate(14.0deg); }
+			40% { transform: rotate(-4.0deg); }
+			50% { transform: rotate(10.0deg); }
+			60% { transform: rotate( 0.0deg); }  
+			100% { transform: rotate( 0.0deg); }
+		}
 	
 		@media print {
 			html, body {
@@ -254,7 +274,9 @@
 	</header>
 
 	<amp-script style="display: flex;" height="5rem" script="greet">
-		<h1 data-nosnippet id="greeting-placeholder">👋 </h1>
+		<h1 data-nosnippet id="greeting-placeholder">
+			<span id="hand-wave">👋</span>
+		</h1>
 	</amp-script>
 
 	<p class="about">
@@ -482,19 +504,24 @@ _____________
 	let i = 0
 	const typeDuration = 75
 	const txt = " Hi, I'm Ansh"
-	const element = document.getElementById("greeting-placeholder")
+	const greetingPlaceholder = document.getElementById("greeting-placeholder")
 
 	function typeWriter() {
 		if (i < txt.length) {
-			element.innerHTML += txt.charAt(i)
+			greetingPlaceholder.innerHTML += txt.charAt(i)
 			i++; setTimeout(typeWriter, typeDuration)
 		}
 	}
 
 	typeWriter()
-	let isFalling = false
 
-	element.addEventListener('click', () => {
+	setTimeout(() => document.getElementById("hand-wave").classList.add('wave'), 1000)
+	setTimeout(() => document.getElementById("hand-wave").classList.remove('wave'), 2500)
+
+	let isFalling = false
+	greetingPlaceholder.addEventListener('click', () => {
+		document.getElementById("hand-wave").classList.add('wave')
+		setTimeout(() => document.getElementById("hand-wave").classList.remove('wave'), 2500)
 		if (isFalling) return
 		isFalling = true
 		let longestDuration = 0
