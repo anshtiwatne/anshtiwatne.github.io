@@ -9,7 +9,7 @@
 	<title>Ansh Tiwatne | About</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="canonical" href="https://anshtiwatne.github.io/" />
-	<meta name="amp-script-src" content="sha384-qDhqYXzP6CTTKLhWsDrb4gO2h_rCC2smzg22YpN2FYJwDhYdQgiScLYBdpBF7ngE">
+	<meta name="amp-script-src" content="sha384-tHyGjfvxY9DfqQhyKyDMAjz3afmd_j3EmwaOXl5BvOQZczzWm3FvVEatrNRGdMSI">
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +139,12 @@
 			border-radius: 0.15rem;
 		}
 
+		#greeting-placeholder {
+			padding: 1rem 0;
+			cursor: pointer;
+			user-select: none;
+		}
+
 		.spaced-list {
 			display: flex;
 			flex-direction: column;
@@ -201,7 +207,7 @@
 		}
 
 		.falling-emoji {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			position: fixed;
 			animation-name: fall;
 			animation-duration: 2s;
@@ -248,7 +254,7 @@
 	</header>
 
 	<amp-script style="display: flex;" height="5rem" script="greet">
-		<h1 data-nosnippet id="greeting-placeholder" style="padding: 1rem 0; cursor: pointer;">👋 </h1>
+		<h1 data-nosnippet id="greeting-placeholder">👋 </h1>
 	</amp-script>
 
 	<p class="about">
@@ -490,7 +496,7 @@ _____________
 		isFalling = true
 		let longestDuration = 0
 
-		for (let i = 0; i < 8; i++) {
+		for (let i = 0; i < 16; i++) {
 			const emoji = document.createElement('div')
 			const fallDuration = Math.random() * 2 + 1
 			emoji.textContent = '👋'
