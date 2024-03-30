@@ -188,7 +188,16 @@
 		}
 	
 		.fa-envelope:hover {
-			color: #00A7EE;
+    		display: none;
+		}
+
+		.fa-envelope + .fa-envelope-open {
+			display: none;
+		}
+
+		.fa-envelope:hover + .fa-envelope-open {
+			display: inline;
+			color: var(--icon-hover);
 		}
 	
 		@media print {
@@ -436,7 +445,10 @@ _____________
 			<a title="LinkedIn" href="https://www.linkedin.com/in/ansht" class="fa-brands fa-linkedin"></a>
 			<a title="Instagram" href="https://www.instagram.com/anshtiwatne" class="fa-brands fa-instagram"></a>
 			<a title="GitHub" href="https://github.com/anshtiwatne" class="fa-brands fa-github"></a>
-			<a title="Email" href="mailto:ansh.tiwatne@gmail.com" class="fa-solid fa-envelope"></a>
+			<a title="Email" href="mailto:ansh.tiwatne@gmail.com">
+				<i class="fa-solid fa-envelope"></i>
+				<i class="fa-solid fa-envelope-open"></i>
+			</a>
 		</nav>
 	</footer>
 
