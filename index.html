@@ -192,12 +192,21 @@
 		}
 	
 		@media print {
+			html, body {
+				print-color-adjust: exact;
+				-webkit-print-color-adjust: exact;
+			}
+
 			header {
 				padding-top: 1rem;
 			}
 	
 			footer {
 				padding-bottom: 1rem;
+			}
+
+			@page {
+				size: A4 portrait;
 			}
 		}
 	</style>
@@ -444,5 +453,4 @@ _____________
 
 	typeWriter()
 </script>
-
 </html>
