@@ -9,7 +9,7 @@
 	<title>Ansh Tiwatne | About</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="canonical" href="https://anshtiwatne.github.io/" />
-	<meta name="amp-script-src" content="sha384-YJn_o8zC79gsnTkBScY6jw0UtCGTALhyLHLsFX9HjDGAhSsqsvZu73AKiSueHs4s">
+	<meta name="amp-script-src" content="sha384-9MGDedTeyCbMyv-m95LtivHSToKbmtLTKcWl8OnfIqH09j_xv2dv7rqMfgDCNhSX">
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -518,8 +518,15 @@ _____________
 	setTimeout(() => document.getElementById("hand-wave").classList.add('wave'), 1000)
 	setTimeout(() => document.getElementById("hand-wave").classList.remove('wave'), 2500)
 
+	let clicks = []
 	let isFalling = false
+
 	greetingPlaceholder.addEventListener('click', () => {
+		clicks.push(new Date().getTime())
+		if (clicks.length > 5) clicks.shift()
+		if (clicks.length < 5 || (clicks[4] - clicks[0]) > 1000) return
+		console.log(`${(clicks[4] - clicks[0]) / 1000} cps!`)
+
 		document.getElementById("hand-wave").classList.add('wave')
 		setTimeout(() => document.getElementById("hand-wave").classList.remove('wave'), 2500)
 		if (isFalling) return
