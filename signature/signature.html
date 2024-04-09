@@ -13,9 +13,10 @@
 	</head>
 
 	<style>
-		:root {
+		table {
 			font-family: 'Mona Sans', sans-serif;
-			color: #24292f
+			color: #24292f;
+			line-height: 0.875;
 		}
 
 		a {
@@ -24,10 +25,9 @@
 		}
 
 		.name {
-			font-size: 1.25rem;
+			font-size: 1rem;
 			font-weight: 700;
 			margin: 0;
-			margin-bottom: -0.25rem;
 		}
 
 		.pfp {
@@ -38,84 +38,77 @@
 		.divider {
 			border-left: 1.5px solid gray;
 			border-radius: 10%;
+			height: 60px;
+			display: inline-block;
 		}
 
 		.container {
-			padding: 0.5rem;
+			padding: 0;
+			margin: 0;
 		}
 
 		.icon {
-			width: 1em;
-			height: 1em;
+			width: 1.25em;
+			height: 1.25em;
 			vertical-align: -0.125em;
 			background-size: contain;
 			background-repeat: no-repeat;
 			display: inline-block;
 		}
 
-		.social-icons {
-			padding-top: 0.25rem;
-			display: flex;
-			gap: 0.5rem;
-		}
-
 		.twitter {
-			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4OS4yIDQ4aDcwLjZMMzA1LjYgMjI0LjIgNDg3IDQ2NEgzNDVMMjMzLjcgMzE4LjYgMTA2LjUgNDY0SDM1LjhMMjAwLjcgMjc1LjUgMjYuOCA0OEgxNzIuNEwyNzIuOSAxODAuOSAzODkuMiA0OHpNMzY0LjQgNDIxLjhoMzkuMUwxNTEuMSA4OGgtNDJMMzY0LjQgNDIxLjh6Ii8+PC9zdmc+');
+			background-image: url('https://anshtiwatne.github.io/signature/assets/x-twitter.svg');
 		}
 
 		.linkedin {
-			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSJDdXJyZW50Q29sb3IiIGQ9Ik00MTYgMzJIMzEuOUMxNC4zIDMyIDAgNDYuNSAwIDY0LjN2MzgzLjRDMCA0NjUuNSAxNC4zIDQ4MCAzMS45IDQ4MEg0MTZjMTcuNiAwIDMyLTE0LjUgMzItMzIuM1Y2NC4zYzAtMTcuOC0xNC40LTMyLjMtMzItMzIuM3pNMTM1LjQgNDE2SDY5VjIwMi4yaDY2LjVWNDE2em0tMzMuMi0yNDNjLTIxLjMgMC0zOC41LTE3LjMtMzguNS0zOC41UzgwLjkgOTYgMTAyLjIgOTZjMjEuMiAwIDM4LjUgMTcuMyAzOC41IDM4LjUgMCAyMS4zLTE3LjIgMzguNS0zOC41IDM4LjV6bTI4Mi4xIDI0M2gtNjYuNFYzMTJjMC0yNC44LS41LTU2LjctMzQuNS01Ni43LTM0LjYgMC0zOS45IDI3LTM5LjkgNTQuOVY0MTZoLTY2LjRWMjAyLjJoNjMuN3YyOS4yaC45YzguOS0xNi44IDMwLjYtMzQuNSA2Mi45LTM0LjUgNjcuMiAwIDc5LjcgNDQuMyA3OS43IDEwMS45VjQxNnoiLz48L3N2Zz4=');
+			background-image: url('https://anshtiwatne.github.io/signature/assets/linkedin.svg');
 		}
 
 		.instagram {
-			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSJDdXJyZW50Q29sb3IiIGQ9Ik0yMjQuMSAxNDFjLTYzLjYgMC0xMTQuOSA1MS4zLTExNC45IDExNC45czUxLjMgMTE0LjkgMTE0LjkgMTE0LjlTMzM5IDMxOS41IDMzOSAyNTUuOSAyODcuNyAxNDEgMjI0LjEgMTQxem0wIDE4OS42Yy00MS4xIDAtNzQuNy0zMy41LTc0LjctNzQuN3MzMy41LTc0LjcgNzQuNy03NC43IDc0LjcgMzMuNSA3NC43IDc0LjctMzMuNiA3NC43LTc0LjcgNzQuN3ptMTQ2LjQtMTk0LjNjMCAxNC45LTEyIDI2LjgtMjYuOCAyNi44LTE0LjkgMC0yNi44LTEyLTI2LjgtMjYuOHMxMi0yNi44IDI2LjgtMjYuOCAyNi44IDEyIDI2LjggMjYuOHptNzYuMSAyNy4yYy0xLjctMzUuOS05LjktNjcuNy0zNi4yLTkzLjktMjYuMi0yNi4yLTU4LTM0LjQtOTMuOS0zNi4yLTM3LTIuMS0xNDcuOS0yLjEtMTg0LjkgMC0zNS44IDEuNy02Ny42IDkuOS05My45IDM2LjFzLTM0LjQgNTgtMzYuMiA5My45Yy0yLjEgMzctMi4xIDE0Ny45IDAgMTg0LjkgMS43IDM1LjkgOS45IDY3LjcgMzYuMiA5My45czU4IDM0LjQgOTMuOSAzNi4yYzM3IDIuMSAxNDcuOSAyLjEgMTg0LjkgMCAzNS45LTEuNyA2Ny43LTkuOSA5My45LTM2LjIgMjYuMi0yNi4yIDM0LjQtNTggMzYuMi05My45IDIuMS0zNyAyLjEtMTQ3LjggMC0xODQuOHpNMzk4LjggMzg4Yy03LjggMTkuNi0yMi45IDM0LjctNDIuNiA0Mi42LTI5LjUgMTEuNy05OS41IDktMTMyLjEgOXMtMTAyLjcgMi42LTEzMi4xLTljLTE5LjYtNy44LTM0LjctMjIuOS00Mi42LTQyLjYtMTEuNy0yOS41LTktOTkuNS05LTEzMi4xcy0yLjYtMTAyLjcgOS0xMzIuMWM3LjgtMTkuNiAyMi45LTM0LjcgNDIuNi00Mi42IDI5LjUtMTEuNyA5OS41LTkgMTMyLjEtOXMxMDIuNy0yLjYgMTMyLjEgOWMxOS42IDcuOCAzNC43IDIyLjkgNDIuNiA0Mi42IDExLjcgMjkuNSA5IDk5LjUgOSAxMzIuMXMyLjcgMTAyLjctOSAxMzIuMXoiLz48L3N2Zz4=');
+			background-image: url('https://anshtiwatne.github.io/signature/assets/instagram.svg');
 		}
 
 		.github {
-			background-image: url('https://drive.google.com/file/d/1XJI1fOP85Vh_Gl6FgoRxVIxgGI3eR2Di/preview');
+			background-image: url('https://anshtiwatne.github.io/signature/assets/github.svg');
 		}
 	</style>
 
 	<body>
-		<table>
+		<table style="font-size: small;">
 			<tr>
 				<td>
 					<img
 						class="pfp"
-						width="75"
-						height="75"
-						src="https://lh3.googleusercontent.com/drive-viewer/AKGpihamYdSwPsdrFmtUBUBlihzCJosAAVw8EQgKYb-i3FACLmMxRXU4d0BLkgJ7PBbAibzCEV7v2t6BHTd8Vz-tEVqWC_rbeC71kDA=w1920-h877-v0"
+						width="52.5"
+						height="52.5"
+						src="https://anshtiwatne.github.io/signature/assets/avatar.webp"
 						alt=""
 					/>
 				</td>
-				<td class="divider"></td>
-				<td class="container">
-					<p class="name">Ansh Tiwatne</p>
-					<a href="https://anshtiatne.github.io/"
-						>anshtiwatne.github.io</a
-					>
-					<nav class="social-icons">
-						<a
-							title="X"
-							href="https://x.com/anshtiwatne"
-							class="icon twitter"
-						></a>
-						<a
-							title="LinkedIn"
-							href="https://www.linkedin.com/in/ansht"
-							class="icon linkedin"
-						></a>
-						<a
-							title="Instagram"
-							href="https://www.instagram.com/anshtiwatne"
-							class="icon instagram"
-						></a>
-						<a
-							title="GitHub"
-							href="https://github.com/anshtiwatne"
-							class="icon github"
-						></a>
-					</nav>
+				<td>
+					<div class="divider"></div>
+				</td>
+				<td>
+					<table class="container">
+						<tr>
+							<td><p class="name">Ansh Tiwatne</p></td>
+						</tr>
+						<tr>
+							<td><a href="https://anshtiatne.github.io/">anshtiwatne.github.io</a></td>
+						</tr>
+						<tr>
+							<td>
+								<table>
+									<tr>
+										<td><a title="X" href="https://x.com/anshtiwatne" class="icon twitter"></a></td>
+										<td><a title="LinkedIn" href="https://www.linkedin.com/in/ansht" class="icon linkedin"></a></td>
+										<td><a title="Instagram" href="https://www.instagram.com/anshtiwatne" class="icon instagram"></a></td>
+										<td><a title="GitHub" href="https://github.com/anshtiwatne" class="icon github"></a></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
 				</td>
 			</tr>
 		</table>
