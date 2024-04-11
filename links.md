@@ -1,5 +1,6 @@
 # Competitions:
-- [CS50x Puzzle Day 2023](https://certificates.cs50.io/2bbc0ffc-e04f-4cf5-8fbc-e86cebfe4b63.pdf)
+- [CS50x Puzzle Day 2024](https://cs50.harvard.edu/certificates/c5bdea6f-5ed8-47b6-b996-e57ed14f9958)
+- [CS50x Puzzle Day 2023](https://cs50.harvard.edu/certificates/2bbc0ffc-e04f-4cf5-8fbc-e86cebfe4b63)
 - [Google Code Jam 2023](https://drive.google.com/file/d/199bWai1cIFngA4zjRUP-CpYb--NpynOC/view?usp=sharing)
 
 # Internships:
